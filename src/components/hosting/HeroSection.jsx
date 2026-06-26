@@ -77,14 +77,14 @@ export default function HeroSection() {
           <a
             href="#pricing"
             onClick={(e) => scrollToSection(e, "pricing")}
-            className="px-10 py-4 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#FFB800]/90 transition-all duration-300 min-h-[44px] flex items-center">
+            className="px-10 py-4 bg-[#FFB800] text-[#0A0A0B] font-display font-bold tracking-wider uppercase hover:bg-[#FFB800]/90 transition-all duration-300 min-h-[44px] flex items-center text-xs">
             
             Explore Plans
           </a>
           <a
             href="#infrastructure"
             onClick={(e) => scrollToSection(e, "infrastructure")}
-            className="px-10 py-4 border border-[#8E9196]/30 text-[#F2F2F2] font-display font-bold text-sm tracking-wider uppercase hover:border-[#FFB800]/50 hover:text-[#FFB800] transition-all duration-300 min-h-[44px] flex items-center">
+            className="px-10 py-4 border border-[#8E9196]/30 text-[#F2F2F2] font-display font-bold tracking-wider uppercase hover:border-[#FFB800]/50 hover:text-[#FFB800] transition-all duration-300 min-h-[44px] flex items-center text-xs">
             
             Learn More
           </a>
