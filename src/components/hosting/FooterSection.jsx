@@ -218,7 +218,7 @@ export default function FooterSection({ selectedPlan }) {
             NEXUS<span className="text-[#FFB800]">HOST</span>
           </Link>
           <p className="text-xs text-[#8E9196]/50 font-mono">
-            © 2025 NexusHost. All rights reserved.
+            © 2026 NexusHost. All rights reserved.
           </p>
         </div>
       </div>

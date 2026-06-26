@@ -5,6 +5,11 @@ import { ArrowDown } from "lucide-react";
 const HERO_IMAGE = "https://media.base44.com/images/public/6a3dec0f4ac497c81e535e3f/f62438dd5_generated_21340133.png";
 
 export default function HeroSection() {
+  const scrollToSection = (e, id) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0B] via-[#0A0A0B] to-transparent z-0" />
@@ -71,12 +76,14 @@ export default function HeroSection() {
         >
           <a
             href="#pricing"
+            onClick={(e) => scrollToSection(e, "pricing")}
             className="px-10 py-4 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#FFB800]/90 transition-all duration-300 min-h-[44px] flex items-center"
           >
             Explore Plans
           </a>
           <a
             href="#infrastructure"
+            onClick={(e) => scrollToSection(e, "infrastructure")}
             className="px-10 py-4 border border-[#8E9196]/30 text-[#F2F2F2] font-display font-bold text-sm tracking-wider uppercase hover:border-[#FFB800]/50 hover:text-[#FFB800] transition-all duration-300 min-h-[44px] flex items-center"
           >
             Learn More
@@ -90,7 +97,7 @@ export default function HeroSection() {
         transition={{ delay: 1.5 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
       >
-        <a href="#pricing" className="flex flex-col items-center gap-2 text-[#8E9196] hover:text-[#FFB800] transition-colors">
+        <a href="#pricing" onClick={(e) => scrollToSection(e, "pricing")} className="flex flex-col items-center gap-2 text-[#8E9196] hover:text-[#FFB800] transition-colors">
           <span className="font-mono text-[10px] uppercase tracking-[0.3em]">Scroll</span>
           <ArrowDown size={16} className="animate-bounce" />
         </a>

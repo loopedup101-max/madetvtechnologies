@@ -77,7 +77,7 @@ export default function Terms() {
             TERMS OF SERVICE
           </h1>
           <p className="text-sm text-[#8E9196] font-mono mb-12">
-            Last updated: January 2025
+            Last updated: June 2026
           </p>
         </motion.div>
 
