@@ -64,10 +64,10 @@ export const planCategories = {
   vps: {
     label: "VPS",
     plans: [
-      plan("Entry", "Entry-level VPS for developers and small applications", "6.99", "4.99", "8.99", ["1GB RAM", "1 vCPU", "25GB NVMe storage", "1TB bandwidth", ...serverFeatures]),
-      plan("Standard", "Balanced VPS resources for growing applications and sites", "11.99", "8.99", "14.99", ["4GB RAM", "2 vCPU", "50GB NVMe storage", "2TB bandwidth", ...serverFeatures]),
-      plan("Elite", "High-performance VPS for demanding workloads", "17.99", "14.99", "21.99", ["8GB RAM", "4 vCPU", "100GB NVMe storage", "4TB bandwidth", ...serverFeatures], true),
-      plan("Ultimate", "Maximum VPS power for resource-intensive applications", "29.99", "24.99", "34.99", ["16GB RAM", "8 vCPU", "200GB NVMe storage", "8TB bandwidth", ...serverFeatures]),
+      plan("Entry", "Entry-level VPS for developers and small applications", "12.99", "9.99", "14.99", ["1GB RAM", "1 vCPU", "25GB NVMe storage", "1TB bandwidth", ...serverFeatures]),
+      plan("Standard", "Balanced VPS resources for growing applications and sites", "22.99", "17.99", "27.99", ["4GB RAM", "2 vCPU", "50GB NVMe storage", "2TB bandwidth", ...serverFeatures]),
+      plan("Elite", "High-performance VPS for demanding workloads", "34.99", "29.99", "42.99", ["8GB RAM", "4 vCPU", "100GB NVMe storage", "4TB bandwidth", ...serverFeatures], true),
+      plan("Ultimate", "Maximum VPS power for resource-intensive applications", "59.99", "49.99", "69.99", ["16GB RAM", "8 vCPU", "200GB NVMe storage", "8TB bandwidth", ...serverFeatures]),
     ],
   },
   dedicated: {
