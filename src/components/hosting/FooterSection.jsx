@@ -75,8 +75,8 @@ export default function FooterSection({ selectedPlan }) {
 
       await base44.integrations.Core.SendEmail({
         to: form.email,
-        subject: "Migration Request Received - NexusHost",
-        body: `Hi,\n\nWe've received your migration request for ${form.domain}.\n\nSelected plan: ${selectedPlan || "To be determined"}\n\nOur migration team will review your request and contact you within 24 hours to schedule a zero-downtime migration. There is no cost for migration on any plan.\n\nThe NexusHost Team`,
+        subject: "Migration Request Received - MadeTechnologies",
+        body: `Hi,\n\nWe've received your migration request for ${form.domain}.\n\nSelected plan: ${selectedPlan || "To be determined"}\n\nOur migration team will review your request and contact you within 24 hours to schedule a zero-downtime migration. There is no cost for migration on any plan.\n\nThe MadeTechnologies Team`,
       });
 
       setStatus("submitted");
@@ -215,10 +215,10 @@ export default function FooterSection({ selectedPlan }) {
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <Link to="/" className="font-display text-lg font-bold tracking-wider text-[#F2F2F2]">
-            NEXUS<span className="text-[#FFB800]">HOST</span>
+            MADE<span className="text-[#FFB800]">TECH</span>
           </Link>
           <p className="text-xs text-[#8E9196]/50 font-mono">
-            © 2026 NexusHost. All rights reserved.
+            © 2026 MadeTechnologies. All rights reserved.
           </p>
         </div>
       </div>

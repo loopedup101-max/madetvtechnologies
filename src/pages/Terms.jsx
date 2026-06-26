@@ -5,11 +5,11 @@ import SubPageLayout from "@/components/hosting/SubPageLayout";
 const sections = [
   {
     title: "1. Acceptance of Terms",
-    body: "By accessing or using NexusHost hosting services, you agree to be bound by these Terms of Service. If you do not agree to these terms, you may not access or use our services. These terms constitute a legally binding agreement between you and NexusHost.",
+    body: "By accessing or using MadeTechnologies hosting services, you agree to be bound by these Terms of Service. If you do not agree to these terms, you may not access or use our services. These terms constitute a legally binding agreement between you and MadeTechnologies.",
   },
   {
     title: "2. Description of Service",
-    body: "NexusHost provides web hosting, VPS, dedicated server, and related infrastructure services. We strive to maintain 99.99% uptime but do not guarantee uninterrupted service. We reserve the right to modify, suspend, or discontinue any service at any time with reasonable notice to affected customers.",
+    body: "MadeTechnologies provides web hosting, VPS, dedicated server, and related infrastructure services. We strive to maintain 99.99% uptime but do not guarantee uninterrupted service. We reserve the right to modify, suspend, or discontinue any service at any time with reasonable notice to affected customers.",
   },
   {
     title: "3. Account Registration",
@@ -33,15 +33,15 @@ const sections = [
   },
   {
     title: "8. Intellectual Property",
-    body: "All software, tools, branding, and content provided by NexusHost remain our intellectual property. You retain all rights to the content and data you host on our platform. You grant us a limited license to access your data solely for the purpose of providing and maintaining our services.",
+    body: "All software, tools, branding, and content provided by MadeTechnologies remain our intellectual property. You retain all rights to the content and data you host on our platform. You grant us a limited license to access your data solely for the purpose of providing and maintaining our services.",
   },
   {
     title: "9. Limitation of Liability",
-    body: "NexusHost shall not be liable for any indirect, incidental, special, or consequential damages, including loss of profits, data, or business opportunities. Our total liability shall not exceed the amount you paid for our services in the three months preceding the claim. This limitation applies regardless of the cause of action.",
+    body: "MadeTechnologies shall not be liable for any indirect, incidental, special, or consequential damages, including loss of profits, data, or business opportunities. Our total liability shall not exceed the amount you paid for our services in the three months preceding the claim. This limitation applies regardless of the cause of action.",
   },
   {
     title: "10. Indemnification",
-    body: "You agree to indemnify and hold NexusHost harmless from any claims, damages, or expenses arising from your use of our services, your violation of these terms, or your infringement of third-party rights. We reserve the right to assume exclusive defense of any matter subject to indemnification.",
+    body: "You agree to indemnify and hold MadeTechnologies harmless from any claims, damages, or expenses arising from your use of our services, your violation of these terms, or your infringement of third-party rights. We reserve the right to assume exclusive defense of any matter subject to indemnification.",
   },
   {
     title: "11. Termination",
@@ -53,11 +53,11 @@ const sections = [
   },
   {
     title: "13. Governing Law",
-    body: "These terms are governed by the laws of the jurisdiction in which NexusHost is incorporated, without regard to conflict of law principles. Any disputes shall be resolved through binding arbitration, except where prohibited by local consumer protection laws.",
+    body: "These terms are governed by the laws of the jurisdiction in which MadeTechnologies is incorporated, without regard to conflict of law principles. Any disputes shall be resolved through binding arbitration, except where prohibited by local consumer protection laws.",
   },
   {
     title: "14. Contact Information",
-    body: "For questions about these Terms of Service, please contact us through our contact page. Our legal team is available to address any concerns regarding your use of our services.",
+    body: "For questions about these Terms of Service, please contact us through our contact page. Our legal team is available to address any concerns regarding your use of MadeTechnologies services.",
   },
 ];
 

@@ -40,7 +40,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="font-display text-xl font-bold tracking-wider text-[#F2F2F2]">
-            NEXUS<span className="text-[#FFB800]">HOST</span>
+            MADE<span className="text-[#FFB800]">TECH</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-10">

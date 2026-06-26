@@ -34,8 +34,8 @@ export default function Contact() {
 
       await base44.integrations.Core.SendEmail({
         to: form.email,
-        subject: "We received your message - NexusHost",
-        body: `Hi ${form.name},\n\nThank you for contacting NexusHost. We've received your message regarding "${form.subject}" and our team will respond within 24 hours.\n\nYour message:\n${form.message}\n\nWe'll be in touch soon.\n\nThe NexusHost Team`,
+        subject: "We received your message - MadeTechnologies",
+        body: `Hi ${form.name},\n\nThank you for contacting MadeTechnologies. We've received your message regarding "${form.subject}" and our team will respond within 24 hours.\n\nYour message:\n${form.message}\n\nWe'll be in touch soon.\n\nThe MadeTechnologies Team`,
       });
 
       setStatus("submitted");

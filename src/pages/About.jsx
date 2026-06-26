@@ -52,7 +52,7 @@ export default function About() {
               <span className="text-[#FFB800]"> WHAT'S NEXT</span>
             </h1>
             <p className="mt-8 text-lg lg:text-xl text-[#8E9196] leading-relaxed max-w-3xl">
-              NexusHost was founded on a simple belief: web hosting shouldn't be a
+              MadeTechnologies was founded on a simple belief: web hosting shouldn't be a
               compromise between speed, security, and affordability. We built our
               infrastructure from the ground up to deliver all three — without
               cutting corners or hiding essential features behind paywalls.
