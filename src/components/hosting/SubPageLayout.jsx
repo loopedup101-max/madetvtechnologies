@@ -5,7 +5,7 @@ import FooterSection from "./FooterSection";
 
 export default function SubPageLayout({ children }) {
   return (
-    <div className="relative min-h-screen bg-[#0A0A0B] overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#FAF8F5] overflow-x-hidden">
       <DataStreams />
       <Navbar />
       <main className="relative z-10 pt-20 lg:pt-28">

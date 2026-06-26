@@ -42,9 +42,9 @@ export default function PlanCard({ plan, index, billingPeriod, categoryName, cat
               className="absolute inset-0 rounded-full"
               style={{ animation: "signalPulse 2s ease-out infinite" }}
             >
-              <div className="w-full h-full rounded-full bg-[#FFB800]/20" />
+              <div className="w-full h-full rounded-full bg-[#4F46E5]/20" />
             </div>
-            <span className="relative block px-4 py-1.5 bg-[#FFB800] text-[#0A0A0B] font-mono text-[10px] uppercase tracking-[0.3em] font-bold whitespace-nowrap">
+            <span className="relative block px-4 py-1.5 bg-[#4F46E5] text-[#FAF8F5] font-mono text-[10px] uppercase tracking-[0.3em] font-bold whitespace-nowrap">
               Most Popular
             </span>
           </div>
@@ -54,37 +54,37 @@ export default function PlanCard({ plan, index, billingPeriod, categoryName, cat
       <div
         className={`relative flex flex-col h-full border transition-all duration-500 ${
           plan.popular
-            ? "border-[#FFB800]/40 bg-[#FFB800]/[0.03]"
-            : "border-white/5 bg-white/[0.02] hover:border-white/10"
+            ? "border-[#4F46E5]/40 bg-[#4F46E5]/[0.03]"
+            : "border-[#E5E0D8] bg-white hover:border-[#4F46E5]/30"
         }`}
         style={plan.popular ? { animation: "pulseGlow 3s ease-in-out infinite" } : {}}
       >
         <div className="p-6 lg:p-8 flex-1 flex flex-col">
           <div className="mb-6">
-            <h3 className="font-display text-xl font-bold text-[#F2F2F2] tracking-wide">
+            <h3 className="font-display text-xl font-bold text-[#1A1A2E] tracking-wide">
               {plan.name}
             </h3>
-            <p className="mt-2 text-sm text-[#8E9196] leading-relaxed font-body min-h-[40px]">
+            <p className="mt-2 text-sm text-[#6B6B7B] leading-relaxed font-body min-h-[40px]">
               {plan.tagline}
             </p>
           </div>
 
           <div className="mb-6">
             <div className="flex items-baseline gap-1">
-              <span className="font-display text-4xl lg:text-5xl font-extrabold text-[#F2F2F2]">
+              <span className="font-display text-4xl lg:text-5xl font-extrabold text-[#1A1A2E]">
                 ${priceData.price}
               </span>
-              <span className="text-[#8E9196] font-mono text-sm">/mo</span>
+              <span className="text-[#6B6B7B] font-mono text-sm">/mo</span>
             </div>
             <div className="mt-2 flex items-center gap-2">
-              <span className="font-mono text-xs text-[#FFB800] font-bold">
+              <span className="font-mono text-xs text-[#4F46E5] font-bold">
                 Save {priceData.savings}
               </span>
-              <span className="text-[10px] text-[#8E9196] font-mono">
+              <span className="text-[10px] text-[#6B6B7B] font-mono">
                 For {billingPeriod} month term
               </span>
             </div>
-            <p className="mt-1 text-[10px] text-[#8E9196]/60 font-mono">
+            <p className="mt-1 text-[10px] text-[#6B6B7B]/60 font-mono">
               Renews at ${priceData.renewPrice}/mo
             </p>
           </div>
@@ -93,10 +93,10 @@ export default function PlanCard({ plan, index, billingPeriod, categoryName, cat
             type="button"
             disabled={loading}
             onClick={handleChoosePlan}
-            className={`block w-full text-center py-4 font-display font-bold text-sm tracking-wider uppercase transition-all duration-300 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#FFB800] focus:ring-offset-2 focus:ring-offset-[#0A0A0B] disabled:opacity-50 ${
+            className={`block w-full text-center py-4 font-display font-bold text-sm tracking-wider uppercase transition-all duration-300 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:ring-offset-2 focus:ring-offset-[#FAF8F5] disabled:opacity-50 ${
               plan.popular
-                ? "bg-[#FFB800] text-[#0A0A0B] hover:bg-[#FFB800]/90"
-                : "border border-[#8E9196]/20 text-[#F2F2F2] hover:border-[#FFB800] hover:text-[#FFB800]"
+                ? "bg-[#4F46E5] text-[#FAF8F5] hover:bg-[#4F46E5]/90"
+                : "border border-[#6B6B7B]/20 text-[#1A1A2E] hover:border-[#4F46E5] hover:text-[#4F46E5]"
             }`}
           >
             {loading ? (
@@ -112,8 +112,8 @@ export default function PlanCard({ plan, index, billingPeriod, categoryName, cat
           <div className="mt-8 space-y-3 flex-1">
             {plan.features.map((feat, i) => (
               <div key={i} className="flex items-start gap-3">
-                <Check size={14} className="text-[#FFB800] mt-0.5 shrink-0" />
-                <span className="text-sm text-[#8E9196] font-body leading-snug">
+                <Check size={14} className="text-[#4F46E5] mt-0.5 shrink-0" />
+                <span className="text-sm text-[#6B6B7B] font-body leading-snug">
                   {feat}
                 </span>
               </div>

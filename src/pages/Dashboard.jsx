@@ -68,9 +68,9 @@ export default function Dashboard() {
         <section className="py-16 lg:py-32">
           <div className="max-w-md mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#FFB800] mb-4">Account Access</p>
-              <h1 className="font-display text-3xl md:text-4xl font-extrabold text-[#F2F2F2] tracking-tight mb-4">DASHBOARD</h1>
-              <p className="text-[#8E9196] mb-8 leading-relaxed">
+              <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#4F46E5] mb-4">Account Access</p>
+              <h1 className="font-display text-3xl md:text-4xl font-extrabold text-[#1A1A2E] tracking-tight mb-4">DASHBOARD</h1>
+              <p className="text-[#6B6B7B] mb-8 leading-relaxed">
                 Enter the email associated with your account to view your subscriptions, invoices, and domains.
               </p>
               <form onSubmit={handleEmailSubmit} className="space-y-4">
@@ -79,9 +79,9 @@ export default function Dashboard() {
                   placeholder="you@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] placeholder:text-[#8E9196]/40 font-body focus:outline-none focus:border-[#FFB800]/50 min-h-[44px]"
+                  className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] placeholder:text-[#6B6B7B]/40 font-body focus:outline-none focus:border-[#4F46E5]/50 min-h-[44px]"
                 />
-                <button type="submit" className="w-full px-8 py-4 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#FFB800]/90 min-h-[44px]">
+                <button type="submit" className="w-full px-8 py-4 bg-[#4F46E5] text-[#FAF8F5] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#4F46E5]/90 min-h-[44px]">
                   Access Dashboard
                 </button>
               </form>
@@ -105,30 +105,30 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#FFB800] mb-2">Welcome back</p>
-              <h1 className="font-display text-xl md:text-2xl font-extrabold text-[#F2F2F2] break-all">{email}</h1>
+              <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#4F46E5] mb-2">Welcome back</p>
+              <h1 className="font-display text-xl md:text-2xl font-extrabold text-[#1A1A2E] break-all">{email}</h1>
             </div>
-            <button onClick={handleLogout} className="flex items-center gap-2 text-[#8E9196] hover:text-[#FFB800] transition-colors text-sm font-mono min-h-[44px]">
+            <button onClick={handleLogout} className="flex items-center gap-2 text-[#6B6B7B] hover:text-[#4F46E5] transition-colors text-sm font-mono min-h-[44px]">
               <LogOut size={16} /> Switch Account
             </button>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             {stats.map((stat) => (
-              <div key={stat.label} className="border border-white/5 bg-white/[0.02] p-6">
-                <stat.icon size={18} className="text-[#FFB800] mb-3" />
-                <div className="font-display text-3xl font-extrabold text-[#F2F2F2]">{stat.value}</div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#8E9196] mt-1">{stat.label}</div>
+              <div key={stat.label} className="border border-[#E5E0D8] bg-white p-6">
+                <stat.icon size={18} className="text-[#4F46E5] mb-3" />
+                <div className="font-display text-3xl font-extrabold text-[#1A1A2E]">{stat.value}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#6B6B7B] mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          <div className="flex gap-1 p-1 bg-white/[0.03] border border-white/5 mb-8 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-1 p-1 bg-white border border-[#E5E0D8] mb-8 overflow-x-auto scrollbar-hide">
             {["subscriptions", "invoices", "domains"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] whitespace-nowrap transition-all min-h-[44px] ${activeTab === tab ? "bg-[#FFB800] text-[#0A0A0B] font-bold" : "text-[#8E9196] hover:text-[#F2F2F2]"}`}
+                className={`px-6 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] whitespace-nowrap transition-all min-h-[44px] ${activeTab === tab ? "bg-[#4F46E5] text-[#FAF8F5] font-bold" : "text-[#6B6B7B] hover:text-[#1A1A2E]"}`}
               >
                 {tab}
               </button>
@@ -136,7 +136,7 @@ export default function Dashboard() {
           </div>
 
           {loading ? (
-            <div className="flex justify-center py-20"><Loader2 className="animate-spin text-[#FFB800]" size={32} /></div>
+            <div className="flex justify-center py-20"><Loader2 className="animate-spin text-[#4F46E5]" size={32} /></div>
           ) : activeTab === "subscriptions" ? (
             <SubscriptionsList subscriptions={data?.subscriptions || []} onCancel={handleCancel} canceling={canceling} />
           ) : activeTab === "invoices" ? (

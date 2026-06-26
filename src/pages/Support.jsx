@@ -8,10 +8,10 @@ const categories = ["technical", "billing", "migration", "general", "security"];
 const priorities = ["low", "medium", "high", "urgent"];
 
 const statusColors = {
-  open: "text-[#FFB800] border-[#FFB800]/30 bg-[#FFB800]/[0.03]",
+  open: "text-[#4F46E5] border-[#4F46E5]/30 bg-[#4F46E5]/[0.03]",
   in_progress: "text-blue-400 border-blue-400/30 bg-blue-400/[0.03]",
   resolved: "text-emerald-400 border-emerald-400/30 bg-emerald-400/[0.03]",
-  closed: "text-[#8E9196] border-[#8E9196]/30 bg-[#8E9196]/[0.03]",
+  closed: "text-[#6B6B7B] border-[#6B6B7B]/30 bg-[#6B6B7B]/[0.03]",
 };
 
 export default function Support() {
@@ -109,13 +109,13 @@ export default function Support() {
         <section className="py-16 lg:py-32">
           <div className="max-w-md mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <Headphones size={24} className="text-[#FFB800] mb-4" />
-              <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#FFB800] mb-4">Support Center</p>
-              <h1 className="font-display text-3xl md:text-4xl font-extrabold text-[#F2F2F2] tracking-tight mb-4">GET SUPPORT</h1>
-              <p className="text-[#8E9196] mb-8 leading-relaxed">Enter your email to view your support tickets and create new ones.</p>
+              <Headphones size={24} className="text-[#4F46E5] mb-4" />
+              <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#4F46E5] mb-4">Support Center</p>
+              <h1 className="font-display text-3xl md:text-4xl font-extrabold text-[#1A1A2E] tracking-tight mb-4">GET SUPPORT</h1>
+              <p className="text-[#6B6B7B] mb-8 leading-relaxed">Enter your email to view your support tickets and create new ones.</p>
               <form onSubmit={handleEmailSubmit} className="space-y-4">
-                <input type="email" placeholder="you@email.com" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] placeholder:text-[#8E9196]/40 font-body focus:outline-none focus:border-[#FFB800]/50 min-h-[44px]" />
-                <button type="submit" className="w-full px-8 py-4 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#FFB800]/90 min-h-[44px]">Access Support</button>
+                <input type="email" placeholder="you@email.com" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] placeholder:text-[#6B6B7B]/40 font-body focus:outline-none focus:border-[#4F46E5]/50 min-h-[44px]" />
+                <button type="submit" className="w-full px-8 py-4 bg-[#4F46E5] text-[#FAF8F5] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#4F46E5]/90 min-h-[44px]">Access Support</button>
               </form>
             </motion.div>
           </div>
@@ -129,22 +129,22 @@ export default function Support() {
       <SubPageLayout>
         <section className="py-16 lg:py-24">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
-            <button onClick={() => setSelectedTicket(null)} className="flex items-center gap-2 text-[#8E9196] hover:text-[#FFB800] transition-colors mb-6 text-sm font-mono min-h-[44px]">
+            <button onClick={() => setSelectedTicket(null)} className="flex items-center gap-2 text-[#6B6B7B] hover:text-[#4F46E5] transition-colors mb-6 text-sm font-mono min-h-[44px]">
               <ArrowLeft size={16} /> All Tickets
             </button>
 
-            <div className="border border-white/5 bg-white/[0.02] p-8 mb-6">
+            <div className="border border-[#E5E0D8] bg-white p-8 mb-6">
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
-                  <p className="font-mono text-xs text-[#8E9196] mb-2">{selectedTicket.ticket_number}</p>
-                  <h1 className="font-display text-xl md:text-2xl font-bold text-[#F2F2F2]">{selectedTicket.subject}</h1>
+                  <p className="font-mono text-xs text-[#6B6B7B] mb-2">{selectedTicket.ticket_number}</p>
+                  <h1 className="font-display text-xl md:text-2xl font-bold text-[#1A1A2E]">{selectedTicket.subject}</h1>
                 </div>
                 <span className={`px-3 py-1 text-[10px] font-mono uppercase tracking-widest border whitespace-nowrap ${statusColors[selectedTicket.status] || statusColors.open}`}>
                   {selectedTicket.status}
                 </span>
               </div>
-              <div className="flex flex-wrap gap-3 text-xs font-mono text-[#8E9196]">
-                <span className="text-[#FFB800]">{selectedTicket.category}</span>
+              <div className="flex flex-wrap gap-3 text-xs font-mono text-[#6B6B7B]">
+                <span className="text-[#4F46E5]">{selectedTicket.category}</span>
                 <span>• Priority: {selectedTicket.priority}</span>
               </div>
             </div>
@@ -152,9 +152,9 @@ export default function Support() {
             <div className="space-y-4 mb-8">
               {(selectedTicket.messages || []).map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === "customer" ? "justify-end" : "justify-start"}`}>
-                  <div className={`max-w-[80%] border p-4 ${msg.role === "customer" ? "border-[#FFB800]/20 bg-[#FFB800]/[0.03]" : "border-white/5 bg-white/[0.02]"}`}>
-                    <p className="text-[10px] font-mono text-[#8E9196] mb-2">{msg.role === "customer" ? "You" : "Support Agent"} • {new Date(msg.timestamp).toLocaleString()}</p>
-                    <p className="text-sm text-[#F2F2F2] leading-relaxed">{msg.content}</p>
+                  <div className={`max-w-[80%] border p-4 ${msg.role === "customer" ? "border-[#4F46E5]/20 bg-[#4F46E5]/[0.03]" : "border-[#E5E0D8] bg-white"}`}>
+                    <p className="text-[10px] font-mono text-[#6B6B7B] mb-2">{msg.role === "customer" ? "You" : "Support Agent"} • {new Date(msg.timestamp).toLocaleString()}</p>
+                    <p className="text-sm text-[#1A1A2E] leading-relaxed">{msg.content}</p>
                   </div>
                 </div>
               ))}
@@ -167,9 +167,9 @@ export default function Support() {
                   onChange={(e) => setReply(e.target.value)}
                   rows={3}
                   placeholder="Type your reply..."
-                  className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] placeholder:text-[#8E9196]/40 font-body focus:outline-none focus:border-[#FFB800]/50 resize-none"
+                  className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] placeholder:text-[#6B6B7B]/40 font-body focus:outline-none focus:border-[#4F46E5]/50 resize-none"
                 />
-                <button type="submit" disabled={submitting || !reply.trim()} className="flex items-center gap-2 px-6 py-3 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#FFB800]/90 min-h-[44px] disabled:opacity-50">
+                <button type="submit" disabled={submitting || !reply.trim()} className="flex items-center gap-2 px-6 py-3 bg-[#4F46E5] text-[#FAF8F5] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#4F46E5]/90 min-h-[44px] disabled:opacity-50">
                   {submitting ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
                   Send Reply
                 </button>
@@ -187,10 +187,10 @@ export default function Support() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#FFB800] mb-2">Support Center</p>
-              <h1 className="font-display text-3xl md:text-4xl font-extrabold text-[#F2F2F2] tracking-tight">YOUR TICKETS</h1>
+              <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#4F46E5] mb-2">Support Center</p>
+              <h1 className="font-display text-3xl md:text-4xl font-extrabold text-[#1A1A2E] tracking-tight">YOUR TICKETS</h1>
             </div>
-            <button onClick={() => setShowForm(!showForm)} className="flex items-center gap-2 px-6 py-3 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#FFB800]/90 min-h-[44px]">
+            <button onClick={() => setShowForm(!showForm)} className="flex items-center gap-2 px-6 py-3 bg-[#4F46E5] text-[#FAF8F5] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#4F46E5]/90 min-h-[44px]">
               <Plus size={16} /> New Ticket
             </button>
           </div>
@@ -200,36 +200,36 @@ export default function Support() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               onSubmit={handleCreate}
-              className="border border-white/5 bg-white/[0.02] p-6 lg:p-8 mb-8 space-y-4"
+              className="border border-[#E5E0D8] bg-white p-6 lg:p-8 mb-8 space-y-4"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#8E9196] mb-3">Category</label>
-                  <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] font-body focus:outline-none focus:border-[#FFB800]/50 min-h-[44px] appearance-none">
-                    {categories.map(c => <option key={c} value={c} className="bg-[#0A0A0B]">{c}</option>)}
+                  <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#6B6B7B] mb-3">Category</label>
+                  <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] font-body focus:outline-none focus:border-[#4F46E5]/50 min-h-[44px] appearance-none">
+                    {categories.map(c => <option key={c} value={c} className="bg-[#FAF8F5]">{c}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#8E9196] mb-3">Priority</label>
-                  <select value={form.priority} onChange={(e) => setForm({ ...form, priority: e.target.value })} className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] font-body focus:outline-none focus:border-[#FFB800]/50 min-h-[44px] appearance-none">
-                    {priorities.map(p => <option key={p} value={p} className="bg-[#0A0A0B]">{p}</option>)}
+                  <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#6B6B7B] mb-3">Priority</label>
+                  <select value={form.priority} onChange={(e) => setForm({ ...form, priority: e.target.value })} className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] font-body focus:outline-none focus:border-[#4F46E5]/50 min-h-[44px] appearance-none">
+                    {priorities.map(p => <option key={p} value={p} className="bg-[#FAF8F5]">{p}</option>)}
                   </select>
                 </div>
               </div>
               <div>
-                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#8E9196] mb-3">Subject</label>
-                <input type="text" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} placeholder="Brief description of your issue" className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] placeholder:text-[#8E9196]/40 font-body focus:outline-none focus:border-[#FFB800]/50 min-h-[44px]" />
+                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#6B6B7B] mb-3">Subject</label>
+                <input type="text" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} placeholder="Brief description of your issue" className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] placeholder:text-[#6B6B7B]/40 font-body focus:outline-none focus:border-[#4F46E5]/50 min-h-[44px]" />
               </div>
               <div>
-                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#8E9196] mb-3">Description</label>
-                <textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} rows={5} placeholder="Describe your issue in detail..." className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] placeholder:text-[#8E9196]/40 font-body focus:outline-none focus:border-[#FFB800]/50 resize-none" />
+                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#6B6B7B] mb-3">Description</label>
+                <textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} rows={5} placeholder="Describe your issue in detail..." className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] placeholder:text-[#6B6B7B]/40 font-body focus:outline-none focus:border-[#4F46E5]/50 resize-none" />
               </div>
               <div className="flex gap-3">
-                <button type="submit" disabled={submitting || !form.subject || !form.description} className="flex items-center gap-2 px-6 py-3 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#FFB800]/90 min-h-[44px] disabled:opacity-50">
+                <button type="submit" disabled={submitting || !form.subject || !form.description} className="flex items-center gap-2 px-6 py-3 bg-[#4F46E5] text-[#FAF8F5] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#4F46E5]/90 min-h-[44px] disabled:opacity-50">
                   {submitting ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
                   Submit Ticket
                 </button>
-                <button type="button" onClick={() => setShowForm(false)} className="px-6 py-3 border border-white/10 text-[#8E9196] font-mono text-sm uppercase tracking-widest hover:text-[#F2F2F2] min-h-[44px]">
+                <button type="button" onClick={() => setShowForm(false)} className="px-6 py-3 border border-[#D8D2C8] text-[#6B6B7B] font-mono text-sm uppercase tracking-widest hover:text-[#1A1A2E] min-h-[44px]">
                   Cancel
                 </button>
               </div>
@@ -237,11 +237,11 @@ export default function Support() {
           )}
 
           {loading ? (
-            <div className="flex justify-center py-20"><Loader2 className="animate-spin text-[#FFB800]" size={32} /></div>
+            <div className="flex justify-center py-20"><Loader2 className="animate-spin text-[#4F46E5]" size={32} /></div>
           ) : tickets.length === 0 ? (
-            <div className="border border-white/5 bg-white/[0.02] p-12 text-center">
-              <Headphones size={24} className="text-[#8E9196]/40 mx-auto mb-3" />
-              <p className="text-[#8E9196]">No support tickets yet. Click "New Ticket" to get help.</p>
+            <div className="border border-[#E5E0D8] bg-white p-12 text-center">
+              <Headphones size={24} className="text-[#6B6B7B]/40 mx-auto mb-3" />
+              <p className="text-[#6B6B7B]">No support tickets yet. Click "New Ticket" to get help.</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -252,17 +252,17 @@ export default function Support() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => setSelectedTicket(ticket)}
-                  className="w-full text-left border border-white/5 bg-white/[0.02] p-6 hover:border-[#FFB800]/30 transition-all duration-300"
+                  className="w-full text-left border border-[#E5E0D8] bg-white p-6 hover:border-[#4F46E5]/30 transition-all duration-300"
                 >
                   <div className="flex items-center justify-between gap-4 mb-2">
-                    <h3 className="font-display text-sm font-bold text-[#F2F2F2]">{ticket.subject}</h3>
+                    <h3 className="font-display text-sm font-bold text-[#1A1A2E]">{ticket.subject}</h3>
                     <span className={`px-3 py-1 text-[10px] font-mono uppercase tracking-widest border whitespace-nowrap ${statusColors[ticket.status] || statusColors.open}`}>
                       {ticket.status}
                     </span>
                   </div>
-                  <div className="flex flex-wrap gap-3 text-xs font-mono text-[#8E9196]">
+                  <div className="flex flex-wrap gap-3 text-xs font-mono text-[#6B6B7B]">
                     <span>{ticket.ticket_number}</span>
-                    <span className="text-[#FFB800]">• {ticket.category}</span>
+                    <span className="text-[#4F46E5]">• {ticket.category}</span>
                     <span>• {ticket.priority} priority</span>
                   </div>
                 </motion.button>
