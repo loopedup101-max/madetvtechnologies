@@ -1,0 +1,47 @@
+{
+  "name": "Domain",
+  "type": "object",
+  "properties": {
+    "domain_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "expiring",
+        "expired",
+        "pending_transfer"
+      ],
+      "default": "active"
+    },
+    "registration_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "auto_renew": {
+      "type": "boolean",
+      "default": true
+    },
+    "nameservers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dns_zone": {
+      "type": "string"
+    },
+    "subscription_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "domain_name",
+    "expiry_date"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "KnowledgeArticle",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "getting_started",
+        "billing",
+        "technical",
+        "security",
+        "migration",
+        "domains"
+      ],
+      "default": "getting_started"
+    },
+    "content": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "views": {
+      "type": "number",
+      "default": 0
+    },
+    "published": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "title",
+    "slug",
+    "category",
+    "content"
+  ]
+}

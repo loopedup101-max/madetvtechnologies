@@ -1,0 +1,80 @@
+{
+  "name": "Subscription",
+  "type": "object",
+  "properties": {
+    "plan_name": {
+      "type": "string"
+    },
+    "plan_category": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "high_performance",
+        "commerce",
+        "vps",
+        "dedicated",
+        "ai",
+        "agency"
+      ],
+      "default": "standard"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "active",
+        "suspended",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "billing_cycle": {
+      "type": "string",
+      "enum": [
+        "monthly",
+        "annual"
+      ],
+      "default": "monthly"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "storage_gb": {
+      "type": "number"
+    },
+    "bandwidth_gb": {
+      "type": "number"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "renewal_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "auto_renew": {
+      "type": "boolean",
+      "default": true
+    },
+    "provisioning_status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "provisioning",
+        "complete",
+        "failed"
+      ],
+      "default": "queued"
+    }
+  },
+  "required": [
+    "plan_name",
+    "plan_category",
+    "billing_cycle",
+    "price"
+  ]
+}
