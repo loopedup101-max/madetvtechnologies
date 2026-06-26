@@ -70,13 +70,13 @@ export default function Terms() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#4F46E5] mb-4">
+          <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#FFB800] mb-4">
             Legal
           </p>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold text-[#1A1A2E] tracking-tight mb-4">
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold text-[#F2F2F2] tracking-tight mb-4">
             TERMS OF SERVICE
           </h1>
-          <p className="text-sm text-[#6B6B7B] font-mono mb-12">
+          <p className="text-sm text-[#8E9196] font-mono mb-12">
             Last updated: June 2026
           </p>
         </motion.div>
@@ -90,10 +90,10 @@ export default function Terms() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.03 }}
             >
-              <h2 className="font-display text-lg lg:text-xl font-bold text-[#1A1A2E] mb-3">
+              <h2 className="font-display text-lg lg:text-xl font-bold text-[#F2F2F2] mb-3">
                 {section.title}
               </h2>
-              <p className="text-[#6B6B7B] leading-relaxed text-base lg:text-lg">
+              <p className="text-[#8E9196] leading-relaxed text-base lg:text-lg">
                 {section.body}
               </p>
             </motion.div>

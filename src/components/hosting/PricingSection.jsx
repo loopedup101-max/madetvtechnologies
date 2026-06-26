@@ -18,24 +18,24 @@ export default function PricingSection({ onSelectPlan }) {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#4F46E5] mb-4">
+          <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#FFB800] mb-4">
             Performance Matrix
           </p>
-          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A2E] tracking-tight">
+          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-extrabold text-[#F2F2F2] tracking-tight">
             CHOOSE YOUR TIER
           </h2>
         </motion.div>
 
         <div className="flex justify-center mb-10 overflow-x-auto scrollbar-hide">
-          <div className="flex gap-1 p-1 bg-white border border-[#E5E0D8]">
+          <div className="flex gap-1 p-1 bg-white/[0.03] border border-white/5">
             {categoryKeys.map((key) => (
               <button
                 key={key}
                 onClick={() => setActiveCategory(key)}
                 className={`px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] whitespace-nowrap transition-all duration-300 min-h-[44px] ${
                   activeCategory === key
-                    ? "bg-[#4F46E5] text-[#FAF8F5] font-bold"
-                    : "text-[#6B6B7B] hover:text-[#1A1A2E]"
+                    ? "bg-[#FFB800] text-[#0A0A0B] font-bold"
+                    : "text-[#8E9196] hover:text-[#F2F2F2]"
                 }`}
               >
                 {planCategories[key].label}
@@ -45,13 +45,13 @@ export default function PricingSection({ onSelectPlan }) {
         </div>
 
         <div className="flex justify-center mb-14">
-          <div className="flex items-center gap-4 p-1 bg-white border border-[#E5E0D8]">
+          <div className="flex items-center gap-4 p-1 bg-white/[0.03] border border-white/5">
             <button
               onClick={() => setBillingPeriod("12")}
               className={`px-6 py-2.5 font-mono text-xs uppercase tracking-widest transition-all duration-300 min-h-[44px] ${
                 billingPeriod === "12"
-                  ? "bg-[#4F46E5]/10 text-[#1A1A2E]"
-                  : "text-[#6B6B7B] hover:text-[#1A1A2E]"
+                  ? "bg-white/10 text-[#F2F2F2]"
+                  : "text-[#8E9196] hover:text-[#F2F2F2]"
               }`}
             >
               12 Months
@@ -60,8 +60,8 @@ export default function PricingSection({ onSelectPlan }) {
               onClick={() => setBillingPeriod("36")}
               className={`px-6 py-2.5 font-mono text-xs uppercase tracking-widest transition-all duration-300 min-h-[44px] ${
                 billingPeriod === "36"
-                  ? "bg-[#4F46E5]/10 text-[#1A1A2E]"
-                  : "text-[#6B6B7B] hover:text-[#1A1A2E]"
+                  ? "bg-white/10 text-[#F2F2F2]"
+                  : "text-[#8E9196] hover:text-[#F2F2F2]"
               }`}
             >
               36 Months

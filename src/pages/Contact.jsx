@@ -54,13 +54,13 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#4F46E5] mb-4">
+            <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#FFB800] mb-4">
               Get In Touch
             </p>
-            <h1 className="font-display text-3xl md:text-5xl font-extrabold text-[#1A1A2E] tracking-tight mb-6">
+            <h1 className="font-display text-3xl md:text-5xl font-extrabold text-[#F2F2F2] tracking-tight mb-6">
               CONTACT US
             </h1>
-            <p className="text-lg text-[#6B6B7B] leading-relaxed mb-12">
+            <p className="text-lg text-[#8E9196] leading-relaxed mb-12">
               Have a question about our hosting plans, need technical support, or
               want to talk about a custom infrastructure solution? Fill out the form
               below and our team will respond within 24 hours.
@@ -71,13 +71,13 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="border border-[#4F46E5]/30 bg-[#4F46E5]/[0.03] p-12 text-center"
+              className="border border-[#FFB800]/30 bg-[#FFB800]/[0.03] p-12 text-center"
             >
-              <CheckCircle2 size={48} className="text-[#4F46E5] mx-auto mb-6" />
-              <h2 className="font-display text-2xl font-bold text-[#1A1A2E] mb-3">
+              <CheckCircle2 size={48} className="text-[#FFB800] mx-auto mb-6" />
+              <h2 className="font-display text-2xl font-bold text-[#F2F2F2] mb-3">
                 Message Sent
               </h2>
-              <p className="text-[#6B6B7B] leading-relaxed max-w-md mx-auto">
+              <p className="text-[#8E9196] leading-relaxed max-w-md mx-auto">
                 Thank you for reaching out, {form.name}. We've sent a confirmation
                 email to {form.email}. Our team will respond within 24 hours.
               </p>
@@ -91,7 +91,7 @@ export default function Contact() {
               className="space-y-6"
             >
               <div>
-                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#6B6B7B] mb-3">
+                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#8E9196] mb-3">
                   Your Name
                 </label>
                 <input
@@ -100,12 +100,12 @@ export default function Contact() {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Jane Doe"
-                  className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] placeholder:text-[#6B6B7B]/40 font-body focus:outline-none focus:border-[#4F46E5]/50 transition-colors min-h-[44px]"
+                  className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] placeholder:text-[#8E9196]/40 font-body focus:outline-none focus:border-[#FFB800]/50 transition-colors min-h-[44px]"
                 />
               </div>
 
               <div>
-                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#6B6B7B] mb-3">
+                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#8E9196] mb-3">
                   Email Address
                 </label>
                 <input
@@ -114,28 +114,28 @@ export default function Contact() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="jane@example.com"
-                  className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] placeholder:text-[#6B6B7B]/40 font-body focus:outline-none focus:border-[#4F46E5]/50 transition-colors min-h-[44px]"
+                  className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] placeholder:text-[#8E9196]/40 font-body focus:outline-none focus:border-[#FFB800]/50 transition-colors min-h-[44px]"
                 />
               </div>
 
               <div>
-                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#6B6B7B] mb-3">
+                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#8E9196] mb-3">
                   Subject
                 </label>
                 <select
                   name="subject"
                   value={form.subject}
                   onChange={handleChange}
-                  className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] font-body focus:outline-none focus:border-[#4F46E5]/50 transition-colors min-h-[44px] appearance-none"
+                  className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] font-body focus:outline-none focus:border-[#FFB800]/50 transition-colors min-h-[44px] appearance-none"
                 >
                   {subjects.map((s) => (
-                    <option key={s} value={s} className="bg-[#FAF8F5] text-[#1A1A2E]">{s}</option>
+                    <option key={s} value={s} className="bg-[#0A0A0B] text-[#F2F2F2]">{s}</option>
                   ))}
                 </select>
               </div>
 
               <div>
-                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#6B6B7B] mb-3">
+                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-[#8E9196] mb-3">
                   Message
                 </label>
                 <textarea
@@ -144,12 +144,12 @@ export default function Contact() {
                   onChange={handleChange}
                   rows={6}
                   placeholder="Tell us how we can help..."
-                  className="w-full bg-white border border-[#D8D2C8] px-5 py-4 text-[#1A1A2E] placeholder:text-[#6B6B7B]/40 font-body focus:outline-none focus:border-[#4F46E5]/50 transition-colors resize-none"
+                  className="w-full bg-white/[0.03] border border-white/10 px-5 py-4 text-[#F2F2F2] placeholder:text-[#8E9196]/40 font-body focus:outline-none focus:border-[#FFB800]/50 transition-colors resize-none"
                 />
               </div>
 
               {error && (
-                <div className="flex items-center gap-2 text-[#4F46E5] text-sm">
+                <div className="flex items-center gap-2 text-[#FFB800] text-sm">
                   <AlertCircle size={16} />
                   <span>{error}</span>
                 </div>
@@ -158,7 +158,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-[#4F46E5] text-[#FAF8F5] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#4F46E5]/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:ring-offset-2 focus:ring-offset-[#FAF8F5]"
+                className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wider uppercase hover:bg-[#FFB800]/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#FFB800] focus:ring-offset-2 focus:ring-offset-[#0A0A0B]"
               >
                 {status === "submitting" ? "Sending..." : "Send Message"}
                 {status !== "submitting" && <Send size={16} />}
