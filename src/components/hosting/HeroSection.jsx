@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import SideWaves from "./SideWaves";
 
 const HERO_IMAGE = "https://media.base44.com/images/public/6a3dec0f4ac497c81e535e3f/f62438dd5_generated_21340133.png";
 
@@ -13,6 +14,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0B] via-[#0A0A0B] to-transparent z-0" />
+      <SideWaves />
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] z-0">
         <motion.div
