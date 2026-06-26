@@ -1,30 +1,55 @@
 import React, { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Hosting", href: "#pricing" },
-  { label: "Domains", href: "#infrastructure" },
-  { label: "AI & Developers", href: "#infrastructure" },
-  { label: "Agency", href: "#migration" },
+  { label: "Hosting", section: "pricing" },
+  { label: "Features", section: "infrastructure" },
+  { label: "Migration", section: "migration" },
+  { label: "About", page: "/about" },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goToSection = (sectionId) => {
+    if (location.pathname === "/") {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+      }, 400);
+    }
+  };
+
+  const handleNavClick = (e, link) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    if (link.section) {
+      goToSection(link.section);
+    } else if (link.page) {
+      navigate(link.page);
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#0A0A0B]/80 border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <a href="#" className="font-display text-xl font-bold tracking-wider text-[#F2F2F2]">
+          <Link to="/" className="font-display text-xl font-bold tracking-wider text-[#F2F2F2]">
             NEXUS<span className="text-[#FFB800]">HOST</span>
-          </a>
+          </Link>
 
           <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
-                className="text-sm font-mono uppercase tracking-widest text-[#8E9196] hover:text-[#F2F2F2] transition-colors duration-300"
+                href={link.section ? `#${link.section}` : link.page}
+                onClick={(e) => handleNavClick(e, link)}
+                className="text-sm font-mono uppercase tracking-widest text-[#8E9196] hover:text-[#F2F2F2] transition-colors duration-300 min-h-[44px] flex items-center"
               >
                 {link.label}
               </a>
@@ -32,18 +57,18 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href="#pricing"
-              className="text-sm font-mono uppercase tracking-widest text-[#8E9196] hover:text-[#F2F2F2] transition-colors"
+            <Link
+              to="/contact"
+              className="text-sm font-mono uppercase tracking-widest text-[#8E9196] hover:text-[#F2F2F2] transition-colors min-h-[44px] flex items-center"
             >
               Login
-            </a>
-            <a
-              href="#pricing"
-              className="px-6 py-2.5 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wide hover:bg-[#FFB800]/90 transition-all duration-300"
+            </Link>
+            <button
+              onClick={() => goToSection("pricing")}
+              className="px-6 py-2.5 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wide hover:bg-[#FFB800]/90 transition-all duration-300 min-h-[44px] flex items-center"
             >
               View Pricing
-            </a>
+            </button>
           </div>
 
           <button
@@ -62,22 +87,27 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
+                href={link.section ? `#${link.section}` : link.page}
+                onClick={(e) => handleNavClick(e, link)}
                 className="block text-sm font-mono uppercase tracking-widest text-[#8E9196] hover:text-[#F2F2F2] py-3 min-h-[44px] flex items-center"
               >
                 {link.label}
               </a>
             ))}
             <div className="pt-4 border-t border-white/5 space-y-3">
-              <a href="#pricing" className="block text-sm font-mono text-[#8E9196] py-2">Login</a>
-              <a
-                href="#pricing"
+              <Link
+                to="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="block text-center px-6 py-3 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wide"
+                className="block text-sm font-mono text-[#8E9196] py-2"
+              >
+                Login
+              </Link>
+              <button
+                onClick={() => { setMobileOpen(false); goToSection("pricing"); }}
+                className="block w-full text-center px-6 py-3 bg-[#FFB800] text-[#0A0A0B] font-display font-bold text-sm tracking-wide"
               >
                 View Pricing
-              </a>
+              </button>
             </div>
           </div>
         </div>

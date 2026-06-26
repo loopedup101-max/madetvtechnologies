@@ -2,18 +2,24 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
-export default function PlanCard({ plan, index, isPopular }) {
+export default function PlanCard({ plan, index, billingPeriod, categoryName, onSelectPlan }) {
+  const priceData = plan.prices[billingPeriod];
+
+  const handleChoosePlan = (e) => {
+    e.preventDefault();
+    onSelectPlan(`${categoryName} - ${plan.name}`, plan.prices[billingPeriod].price);
+    document.getElementById("migration")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`relative group flex flex-col h-full ${
-        isPopular ? "lg:-mt-4 lg:mb-4" : ""
-      }`}
+      className={`relative group flex flex-col h-full ${plan.popular ? "lg:-mt-4 lg:mb-4" : ""}`}
     >
-      {isPopular && (
+      {plan.popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
           <div className="relative">
             <div
@@ -31,46 +37,47 @@ export default function PlanCard({ plan, index, isPopular }) {
 
       <div
         className={`relative flex flex-col h-full border transition-all duration-500 ${
-          isPopular
+          plan.popular
             ? "border-[#FFB800]/40 bg-[#FFB800]/[0.03]"
             : "border-white/5 bg-white/[0.02] hover:border-white/10"
         }`}
-        style={isPopular ? { animation: "pulseGlow 3s ease-in-out infinite" } : {}}
+        style={plan.popular ? { animation: "pulseGlow 3s ease-in-out infinite" } : {}}
       >
         <div className="p-6 lg:p-8 flex-1 flex flex-col">
           <div className="mb-6">
             <h3 className="font-display text-xl font-bold text-[#F2F2F2] tracking-wide">
               {plan.name}
             </h3>
-            <p className="mt-2 text-sm text-[#8E9196] leading-relaxed font-body">
-              {plan.description}
+            <p className="mt-2 text-sm text-[#8E9196] leading-relaxed font-body min-h-[40px]">
+              {plan.tagline}
             </p>
           </div>
 
           <div className="mb-6">
             <div className="flex items-baseline gap-1">
               <span className="font-display text-4xl lg:text-5xl font-extrabold text-[#F2F2F2]">
-                ${plan.price}
+                ${priceData.price}
               </span>
               <span className="text-[#8E9196] font-mono text-sm">/mo</span>
             </div>
             <div className="mt-2 flex items-center gap-2">
               <span className="font-mono text-xs text-[#FFB800] font-bold">
-                Save {plan.savings}
+                Save {priceData.savings}
               </span>
               <span className="text-[10px] text-[#8E9196] font-mono">
-                For 36 month term
+                For {billingPeriod} month term
               </span>
             </div>
             <p className="mt-1 text-[10px] text-[#8E9196]/60 font-mono">
-              Renews at ${plan.renewPrice}/mo
+              Renews at ${priceData.renewPrice}/mo
             </p>
           </div>
 
           <a
             href="#migration"
+            onClick={handleChoosePlan}
             className={`block w-full text-center py-4 font-display font-bold text-sm tracking-wider uppercase transition-all duration-300 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#FFB800] focus:ring-offset-2 focus:ring-offset-[#0A0A0B] ${
-              isPopular
+              plan.popular
                 ? "bg-[#FFB800] text-[#0A0A0B] hover:bg-[#FFB800]/90"
                 : "border border-[#8E9196]/20 text-[#F2F2F2] hover:border-[#FFB800] hover:text-[#FFB800]"
             }`}
