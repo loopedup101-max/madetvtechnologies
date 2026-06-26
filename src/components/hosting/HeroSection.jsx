@@ -47,8 +47,8 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.5 }}
           className="font-display font-extrabold text-[#F2F2F2] leading-[0.95] tracking-tight">
           
-          <span className="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
-            WHERE HIGH TRAFFIC
+          <span className="block text-4xl sm:text-4xl md:text-4xl lg:text-4xl">WHERE HIGH TRAFFIC
+
           </span>
           <span className="block text-4xl mt-2 sm:text-4xl md:text-4xl lg:text-4xl">MEETS HIGH-
 
