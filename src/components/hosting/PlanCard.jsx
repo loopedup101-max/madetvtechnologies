@@ -1,29 +1,18 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Loader2 } from "lucide-react";
-import { base44 } from "@/api/base44Client";
+import { planCategories } from "@/data/plans";
 
 export default function PlanCard({ plan, index, billingPeriod, categoryName, categoryKey, onSelectPlan }) {
   const priceData = plan.prices[billingPeriod];
 
   const [loading, setLoading] = useState(false);
 
-  const handleChoosePlan = async (e) => {
+  const handleChoosePlan = (e) => {
     e.preventDefault();
-    setLoading(true);
-    try {
-      const response = await base44.functions.invoke("create-checkout", {
-        plan_name: `${categoryName} - ${plan.name}`,
-        plan_category: categoryKey,
-        price: parseFloat(priceData.price),
-        billing_period: parseInt(billingPeriod)
-      });
-      if (response.data?.redirectUrl) {
-        window.location.href = response.data.redirectUrl;
-      }
-    } catch (err) {
-      console.error("Checkout failed:", err);
-      setLoading(false);
+    const checkoutUrl = planCategories[categoryKey]?.checkoutUrl;
+    if (checkoutUrl) {
+      window.open(checkoutUrl, "_blank");
     }
   };
 

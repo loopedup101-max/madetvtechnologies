@@ -36,6 +36,7 @@ function plan(name, tagline, price12, price36, renew, features, popular = false)
 export const planCategories = {
   standard: {
     label: "Standard",
+    checkoutUrl: "https://hosting.com/hosting/",
     plans: [
       plan("Starter", "Perfect for personal sites and small projects getting started online", "3.99", "2.99", "5.99", ["20GB SSD storage", "1x CPU power", "1 website", "~25k monthly visits", ...sharedFeatures]),
       plan("Basic", "Ideal for small businesses launching their first web presence", "5.99", "4.99", "8.99", ["50GB SSD storage", "2x CPU power", "1 website", "~50k monthly visits", ...sharedFeatures]),
@@ -45,6 +46,7 @@ export const planCategories = {
   },
   high_performance: {
     label: "High Performance",
+    checkoutUrl: "https://hosting.com/hosting/platforms/wordpress-hosting/",
     plans: [
       plan("Pro", "Crafted for growing companies needing power and flexibility", "12.99", "9.99", "16.99", ["100GB NVMe storage", "5x more CPU power", "100 websites", "~400k monthly visits", ...sharedFeatures]),
       plan("Premium", "Built for sites and apps prioritizing storage and CPU performance", "16.99", "13.99", "20.99", ["150GB NVMe storage", "6x more CPU power", "100 websites", "~400k monthly visits", ...sharedFeatures], true),
@@ -54,6 +56,7 @@ export const planCategories = {
   },
   commerce: {
     label: "Commerce",
+    checkoutUrl: "https://hosting.com/hosting/platforms/wordpress-hosting/",
     plans: [
       plan("Starter", "Launch your online store with optimized WooCommerce hosting", "15.99", "11.99", "19.99", ["100GB NVMe storage", "5x more CPU power", "100 websites", "~400k monthly visits", "WooCommerce optimized", ...sharedFeatures]),
       plan("Growth", "Scale your e-commerce business with enhanced performance", "19.99", "15.99", "24.99", ["150GB NVMe storage", "6x more CPU power", "100 websites", "~500k monthly visits", "WooCommerce optimized", ...sharedFeatures]),
@@ -63,6 +66,7 @@ export const planCategories = {
   },
   vps: {
     label: "VPS",
+    checkoutUrl: "https://hosting.com/hosting/vps-hosting/managed/linux/",
     plans: [
       plan("Entry", "Entry-level VPS for developers and small applications", "12.99", "9.99", "14.99", ["1GB RAM", "1 vCPU", "25GB NVMe storage", "1TB bandwidth", ...serverFeatures]),
       plan("Standard", "Balanced VPS resources for growing applications and sites", "22.99", "17.99", "27.99", ["4GB RAM", "2 vCPU", "50GB NVMe storage", "2TB bandwidth", ...serverFeatures]),
@@ -72,6 +76,7 @@ export const planCategories = {
   },
   dedicated: {
     label: "Dedicated",
+    checkoutUrl: "https://hosting.com/hosting/dedicated-server-hosting/",
     plans: [
       plan("Express", "Dedicated hardware for businesses that need full control", "99.99", "79.99", "119.99", ["4-core CPU", "8GB RAM", "1TB NVMe storage", "10TB bandwidth", ...serverFeatures]),
       plan("Advanced", "Powerful dedicated servers for high-traffic applications", "139.99", "119.99", "159.99", ["8-core CPU", "16GB RAM", "2TB NVMe storage", "20TB bandwidth", ...serverFeatures], true),
@@ -81,6 +86,7 @@ export const planCategories = {
   },
   ai_tools: {
     label: "AI Tools",
+    checkoutUrl: "https://hosting.com/hosting/platforms/ai-application-studio/",
     plans: [
       plan("Starter", "Get started with AI-powered development tools and APIs", "19.99", "14.99", "24.99", ["50GB storage", "Shared GPU", "10k API calls/mo", ...aiFeatures]),
       plan("Developer", "Enhanced AI capabilities for active developers", "29.99", "24.99", "34.99", ["100GB storage", "Shared GPU", "50k API calls/mo", ...aiFeatures], true),
@@ -90,6 +96,7 @@ export const planCategories = {
   },
   agency: {
     label: "Agency",
+    checkoutUrl: "https://hosting.com/hosting/hosting-by-service/reseller-hosting/",
     plans: [
       plan("Starter", "Manage multiple client sites with consolidated hosting", "39.99", "29.99", "49.99", ["25 sites", "250GB NVMe storage", "Client management dashboard", ...sharedFeatures]),
       plan("Growth", "Scale your agency with more sites and resources", "59.99", "49.99", "69.99", ["50 sites", "500GB NVMe storage", "Client management dashboard", ...sharedFeatures], true),
