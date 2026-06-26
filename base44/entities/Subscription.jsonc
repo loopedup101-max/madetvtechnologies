@@ -13,7 +13,7 @@
         "commerce",
         "vps",
         "dedicated",
-        "ai",
+        "ai_tools",
         "agency"
       ],
       "default": "standard"
@@ -36,16 +36,14 @@
       ],
       "default": "monthly"
     },
+    "billing_period_months": {
+      "type": "number",
+      "default": 12
+    },
     "domain": {
       "type": "string"
     },
     "price": {
-      "type": "number"
-    },
-    "storage_gb": {
-      "type": "number"
-    },
-    "bandwidth_gb": {
       "type": "number"
     },
     "start_date": {
@@ -69,6 +67,19 @@
         "failed"
       ],
       "default": "queued"
+    },
+    "buyer_email": {
+      "type": "string",
+      "format": "email"
+    },
+    "checkout_id": {
+      "type": "string"
+    },
+    "wix_subscription_id": {
+      "type": "string"
+    },
+    "wix_order_id": {
+      "type": "string"
     }
   },
   "required": [

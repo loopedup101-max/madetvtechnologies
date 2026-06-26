@@ -14,12 +14,14 @@ const footerLinks = {
   Company: [
     { label: "About Us", page: "/about" },
     { label: "Contact", page: "/contact" },
+    { label: "Dashboard", page: "/dashboard" },
     { label: "Start Migration", section: "migration" },
   ],
   Resources: [
+    { label: "Knowledge Base", page: "/kb" },
+    { label: "Support Center", page: "/support" },
     { label: "View Pricing", section: "pricing" },
     { label: "Infrastructure", section: "infrastructure" },
-    { label: "Contact Support", page: "/contact" },
   ],
   Legal: [
     { label: "Privacy Policy", page: "/privacy" },

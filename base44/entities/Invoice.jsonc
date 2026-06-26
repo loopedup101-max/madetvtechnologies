@@ -48,6 +48,16 @@
       "type": "string",
       "format": "date"
     },
+    "customer_email": {
+      "type": "string",
+      "format": "email"
+    },
+    "wix_order_id": {
+      "type": "string"
+    },
+    "wix_subscription_id": {
+      "type": "string"
+    },
     "items": {
       "type": "array",
       "items": {

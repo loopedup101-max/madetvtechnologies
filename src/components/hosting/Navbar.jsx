@@ -5,7 +5,8 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Hosting", section: "pricing" },
   { label: "Features", section: "infrastructure" },
-  { label: "Migration", section: "migration" },
+  { label: "Support", page: "/support" },
+  { label: "Knowledge Base", page: "/kb" },
   { label: "About", page: "/about" },
 ];
 
@@ -58,10 +59,10 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              to="/contact"
+              to="/dashboard"
               className="text-sm font-mono uppercase tracking-widest text-[#8E9196] hover:text-[#F2F2F2] transition-colors min-h-[44px] flex items-center"
             >
-              Login
+              Dashboard
             </Link>
             <button
               onClick={() => goToSection("pricing")}
@@ -96,11 +97,11 @@ export default function Navbar() {
             ))}
             <div className="pt-4 border-t border-white/5 space-y-3">
               <Link
-                to="/contact"
+                to="/dashboard"
                 onClick={() => setMobileOpen(false)}
                 className="block text-sm font-mono text-[#8E9196] py-2"
               >
-                Login
+                Dashboard
               </Link>
               <button
                 onClick={() => { setMobileOpen(false); goToSection("pricing"); }}

@@ -11,6 +11,10 @@ import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Dashboard from './pages/Dashboard';
+import Support from './pages/Support';
+import KnowledgeBase from './pages/KnowledgeBase';
+import ThankYou from './pages/ThankYou';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -44,6 +48,10 @@ const AuthenticatedApp = () => {
       <Route path="/terms" element={<Terms />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/support" element={<Support />} />
+      <Route path="/kb" element={<KnowledgeBase />} />
+      <Route path="/thank-you" element={<ThankYou />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

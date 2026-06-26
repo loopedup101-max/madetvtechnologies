@@ -77,6 +77,7 @@ export default function PricingSection({ onSelectPlan }) {
               index={i}
               billingPeriod={billingPeriod}
               categoryName={currentCategory.label}
+              categoryKey={activeCategory}
               onSelectPlan={onSelectPlan}
             />
           ))}

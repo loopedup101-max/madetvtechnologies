@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
+import { base44 } from "@/api/base44Client";
 
-export default function PlanCard({ plan, index, billingPeriod, categoryName, onSelectPlan }) {
+export default function PlanCard({ plan, index, billingPeriod, categoryName, categoryKey, onSelectPlan }) {
   const priceData = plan.prices[billingPeriod];
 
-  const handleChoosePlan = (e) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleChoosePlan = async (e) => {
     e.preventDefault();
-    onSelectPlan(`${categoryName} - ${plan.name}`, plan.prices[billingPeriod].price);
-    document.getElementById("migration")?.scrollIntoView({ behavior: "smooth" });
+    setLoading(true);
+    try {
+      const response = await base44.functions.invoke("create-checkout", {
+        plan_name: `${categoryName} - ${plan.name}`,
+        plan_category: categoryKey,
+        price: parseFloat(priceData.price),
+        billing_period: parseInt(billingPeriod),
+      });
+      if (response.data?.redirectUrl) {
+        window.location.href = response.data.redirectUrl;
+      }
+    } catch (err) {
+      console.error("Checkout failed:", err);
+      setLoading(false);
+    }
   };
 
   return (
@@ -73,17 +89,25 @@ export default function PlanCard({ plan, index, billingPeriod, categoryName, onS
             </p>
           </div>
 
-          <a
-            href="#migration"
+          <button
+            type="button"
+            disabled={loading}
             onClick={handleChoosePlan}
-            className={`block w-full text-center py-4 font-display font-bold text-sm tracking-wider uppercase transition-all duration-300 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#FFB800] focus:ring-offset-2 focus:ring-offset-[#0A0A0B] ${
+            className={`block w-full text-center py-4 font-display font-bold text-sm tracking-wider uppercase transition-all duration-300 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#FFB800] focus:ring-offset-2 focus:ring-offset-[#0A0A0B] disabled:opacity-50 ${
               plan.popular
                 ? "bg-[#FFB800] text-[#0A0A0B] hover:bg-[#FFB800]/90"
                 : "border border-[#8E9196]/20 text-[#F2F2F2] hover:border-[#FFB800] hover:text-[#FFB800]"
             }`}
           >
-            Choose Plan
-          </a>
+            {loading ? (
+              <span className="flex items-center justify-center gap-2">
+                <Loader2 size={16} className="animate-spin" />
+                Processing...
+              </span>
+            ) : (
+              "Choose Plan"
+            )}
+          </button>
 
           <div className="mt-8 space-y-3 flex-1">
             {plan.features.map((feat, i) => (

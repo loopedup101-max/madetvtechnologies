@@ -42,6 +42,13 @@
     "ticket_number": {
       "type": "string"
     },
+    "customer_email": {
+      "type": "string",
+      "format": "email"
+    },
+    "customer_name": {
+      "type": "string"
+    },
     "messages": {
       "type": "array",
       "items": {
@@ -65,14 +72,12 @@
           }
         }
       }
-    },
-    "rating": {
-      "type": "number"
     }
   },
   "required": [
     "subject",
     "description",
-    "category"
+    "category",
+    "customer_email"
   ]
 }

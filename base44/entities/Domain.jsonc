@@ -33,11 +33,12 @@
         "type": "string"
       }
     },
-    "dns_zone": {
-      "type": "string"
-    },
     "subscription_id": {
       "type": "string"
+    },
+    "buyer_email": {
+      "type": "string",
+      "format": "email"
     }
   },
   "required": [
