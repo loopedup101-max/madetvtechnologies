@@ -6,8 +6,8 @@ import SubPageLayout from "@/components/hosting/SubPageLayout";
 
 const stats = [
   { value: "99.99%", label: "Uptime SLA", icon: Zap },
-  { value: "12", label: "Global Data Centers", icon: Globe },
-  { value: "500K+", label: "Sites Hosted", icon: Server },
+  { value: "40", label: "Global Locations", icon: Globe },
+  { value: "3M+", label: "Sites Hosted", icon: Server },
   { value: "24/7", label: "Expert Support", icon: Award },
 ];
 
@@ -58,7 +58,7 @@ export default function About() {
               cutting corners or hiding essential features behind paywalls.
             </p>
             <p className="mt-6 text-lg text-[#8E9196] leading-relaxed max-w-3xl">
-              From our first server to a global network spanning 12 data centers,
+              From our first server to a global network spanning 40 locations,
               we've stayed focused on what matters: giving our customers the tools
               they need to build, scale, and protect their online presence.
             </p>

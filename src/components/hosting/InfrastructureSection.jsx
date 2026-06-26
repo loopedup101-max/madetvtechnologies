@@ -11,7 +11,7 @@ const SECURITY_IMAGE = "https://media.base44.com/images/public/6a3dec0f4ac497c81
 
 const features = [
   { icon: Clock, label: "99.99% Uptime SLA", desc: "Guaranteed availability for mission-critical applications", slug: "uptime-sla" },
-  { icon: HardDrive, label: "Weekly Backup", desc: "Automated weekly snapshots of your entire environment", slug: "weekly-backup" },
+  { icon: HardDrive, label: "Daily Backups", desc: "Automated daily snapshots of your entire environment", slug: "daily-backups" },
   { icon: Cpu, label: "AI Site Creation", desc: "Intelligent site generation powered by machine learning", slug: "ai-site-creation" },
   { icon: Layers, label: "Multi-Site Mgmt", desc: "Centralized control for all your hosted properties", slug: "multi-site-mgmt" },
   { icon: Settings, label: "Plugin Management", desc: "One-click installs and updates for your stack", slug: "plugin-management" },
