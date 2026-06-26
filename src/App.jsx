@@ -15,6 +15,7 @@ import Dashboard from './pages/Dashboard';
 import Support from './pages/Support';
 import KnowledgeBase from './pages/KnowledgeBase';
 import ThankYou from './pages/ThankYou';
+import FeatureDetail from './pages/FeatureDetail';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -52,6 +53,7 @@ const AuthenticatedApp = () => {
       <Route path="/support" element={<Support />} />
       <Route path="/kb" element={<KnowledgeBase />} />
       <Route path="/thank-you" element={<ThankYou />} />
+      <Route path="/features/:slug" element={<FeatureDetail />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
