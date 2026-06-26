@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import PlanCard from "./PlanCard";
+import ComparisonTable from "./ComparisonTable";
 import { planCategories, categoryKeys } from "@/data/plans";
 
 export default function PricingSection({ onSelectPlan }) {
@@ -81,6 +82,26 @@ export default function PricingSection({ onSelectPlan }) {
               onSelectPlan={onSelectPlan}
             />
           ))}
+        </div>
+
+        <div className="mt-16 lg:mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <p className="font-mono text-xs uppercase tracking-[0.4em] text-[#FFB800] mb-3">
+              Side by Side
+            </p>
+            <h3 className="font-display text-2xl md:text-3xl font-extrabold text-[#F2F2F2] tracking-tight">
+              COMPARE {currentCategory.label.toUpperCase()} PLANS
+            </h3>
+          </motion.div>
+          <ComparisonTable
+            plans={currentCategory.plans}
+            billingPeriod={billingPeriod}
+          />
         </div>
       </div>
     </section>
