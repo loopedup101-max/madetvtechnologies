@@ -2,13 +2,10 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import PlanCard from "./PlanCard";
 import ComparisonTable from "./ComparisonTable";
-import { planCategories, categoryKeys } from "@/data/plans";
+import { madeCraftPlans } from "@/data/plans";
 
 export default function PricingSection({ onSelectPlan }) {
-  const [billingPeriod, setBillingPeriod] = useState("36");
-  const [activeCategory, setActiveCategory] = useState("high_performance");
-
-  const currentCategory = planCategories[activeCategory];
+  const [billingPeriod, setBillingPeriod] = useState("monthly");
 
   return (
     <section id="pricing" className="relative py-24 lg:py-40">
@@ -27,58 +24,38 @@ export default function PricingSection({ onSelectPlan }) {
           </h2>
         </motion.div>
 
-        <div className="flex justify-center mb-10 overflow-x-auto scrollbar-hide">
-          <div className="flex gap-1 p-1 bg-white/[0.03] border border-white/5">
-            {categoryKeys.map((key) => (
-              <button
-                key={key}
-                onClick={() => setActiveCategory(key)}
-                className={`px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] whitespace-nowrap transition-all duration-300 min-h-[44px] ${
-                  activeCategory === key
-                    ? "bg-[#FFB800] text-[#0A0A0B] font-bold"
-                    : "text-[#8E9196] hover:text-[#F2F2F2]"
-                }`}
-              >
-                {planCategories[key].label}
-              </button>
-            ))}
-          </div>
-        </div>
-
         <div className="flex justify-center mb-14">
           <div className="flex items-center gap-4 p-1 bg-white/[0.03] border border-white/5">
             <button
-              onClick={() => setBillingPeriod("12")}
+              onClick={() => setBillingPeriod("monthly")}
               className={`px-6 py-2.5 font-mono text-xs uppercase tracking-widest transition-all duration-300 min-h-[44px] ${
-                billingPeriod === "12"
+                billingPeriod === "monthly"
                   ? "bg-white/10 text-[#F2F2F2]"
                   : "text-[#8E9196] hover:text-[#F2F2F2]"
               }`}
             >
-              12 Months
+              Monthly
             </button>
             <button
-              onClick={() => setBillingPeriod("36")}
+              onClick={() => setBillingPeriod("annual")}
               className={`px-6 py-2.5 font-mono text-xs uppercase tracking-widest transition-all duration-300 min-h-[44px] ${
-                billingPeriod === "36"
+                billingPeriod === "annual"
                   ? "bg-white/10 text-[#F2F2F2]"
                   : "text-[#8E9196] hover:text-[#F2F2F2]"
               }`}
             >
-              36 Months
+              Yearly
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-          {currentCategory.plans.map((plan, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-6">
+          {madeCraftPlans.map((plan, i) => (
             <PlanCard
               key={plan.name}
               plan={plan}
               index={i}
               billingPeriod={billingPeriod}
-              categoryName={currentCategory.label}
-              categoryKey={activeCategory}
               onSelectPlan={onSelectPlan}
             />
           ))}
@@ -95,11 +72,11 @@ export default function PricingSection({ onSelectPlan }) {
               Side by Side
             </p>
             <h3 className="font-display text-2xl md:text-3xl font-extrabold text-[#F2F2F2] tracking-tight">
-              COMPARE {currentCategory.label.toUpperCase()} PLANS
+              COMPARE ALL PLANS
             </h3>
           </motion.div>
           <ComparisonTable
-            plans={currentCategory.plans}
+            plans={madeCraftPlans}
             billingPeriod={billingPeriod}
           />
         </div>
