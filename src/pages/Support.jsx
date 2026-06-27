@@ -73,6 +73,12 @@ export default function Support() {
         body: `Hi,\n\nWe've received your support ticket "${form.subject}" (Ticket #${ticketNum}).\n\nOur team will respond within 24 hours.\n\nThe MadeTechnologies Team`,
       });
 
+      await base44.integrations.Core.SendEmail({
+        to: "support@madetechnologies.com",
+        subject: `[New Ticket] ${ticketNum} - ${form.subject}`,
+        body: `A new support ticket has been submitted.\n\nTicket #: ${ticketNum}\nSubject: ${form.subject}\nCategory: ${form.category}\nPriority: ${form.priority}\nFrom: ${email}\n\nDescription:\n${form.description}\n\nView and respond in the support dashboard.`,
+      });
+
       setForm({ subject: "", description: "", category: "general", priority: "medium" });
       setShowForm(false);
       await loadTickets();
