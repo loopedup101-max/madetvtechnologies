@@ -220,7 +220,7 @@ export default function FooterSection({ selectedPlan }) {
             MADE<span className="text-[#FFB800]">TECH</span>
           </Link>
           <p className="text-xs text-[#8E9196]/50 font-mono">
-            © 2026 MadeTechnologies. All rights reserved.
+            © 2026 MadeCraftAI. All rights reserved.
           </p>
         </div>
       </div>
