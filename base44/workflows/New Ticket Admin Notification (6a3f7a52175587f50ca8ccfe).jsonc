@@ -1,0 +1,37 @@
+{
+  "name": "New Ticket Admin Notification (6a3f7a52175587f50ca8ccfe)",
+  "description": "Sends a server-side email notification to support@madetechnologies.com whenever a new support ticket is created. Active once support@madetechnologies.com is invited as an app user.",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "entity",
+      "events": [
+        "create"
+      ],
+      "entity_name": "SupportTicket"
+    }
+  },
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "new_ticket_admin_notification_6a3f7a52175587f50ca8ccfe",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "run_function": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "notify-new-ticket",
+            "args": {}
+          },
+          "then": "end"
+        }
+      }
+    ]
+  },
+  "x-base44-migrated-from-automation": {
+    "legacy_payload_function": "notify-new-ticket"
+  }
+}
